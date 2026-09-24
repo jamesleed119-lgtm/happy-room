@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <base href="https://cdn.jsdelivr.net/gh/zennedu/hydra@4afc772e861d3df34427623bbc4afa7ce1fbb067/m551560d/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Счастливая Комната</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@378e4f8f0603c1e9e9241ebce0c1e454ae7a0400/happy%20room/TemplateData/style.css">
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@378e4f8f0603c1e9e9241ebce0c1e454ae7a0400/happy%20room/TemplateData/UnityProgress.js"></script>
+</head>
+<body class="template">
+  <div class="template-wrap clear">
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+    <div id="loading-screen" aria-live="polite">Загрузка...</div>
+  </div>
+
+  <script>
+    var Module = {
+      TOTAL_MEMORY: 268435456,
+      errorhandler: null,
+      compatibilitycheck: null,
+      backgroundColor: "#000000",
+      splashStyle: "Light",
+      dataUrl: "https://rawcdn.githack.com/bubbls/UGS-Assets/378e4f8f0603c1e9e9241ebce0c1e454ae7a0400/happy%20room/Release/build_web.data",
+      codeUrl: "https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@378e4f8f0603c1e9e9241ebce0c1e454ae7a0400/happy%20room/Release/build_web.js",
+      asmUrl: "https://rawcdn.githack.com/bubbls/UGS-Assets/378e4f8f0603c1e9e9241ebce0c1e454ae7a0400/happy%20room/Release/build_web.asm.js",
+      memUrl: "https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@378e4f8f0603c1e9e9241ebce0c1e454ae7a0400/happy%20room/Release/build_web.mem"
+    };
+
+    var canvas = document.getElementById("canvas");
+    var loadingScreen = document.getElementById("loading-screen");
+
+    function resizeCanvas() {
+      canvas.width = Math.max(1, window.innerWidth - 50);
+      canvas.height = Math.max(1, window.innerHeight - 50);
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    window.addEventListener("load", function () {
+      loadingScreen.remove();
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@378e4f8f0603c1e9e9241ebce0c1e454ae7a0400/happy%20room/Release/UnityLoader.js"></script>
+</body>
+</html>
